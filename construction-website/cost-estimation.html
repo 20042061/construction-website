@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Estimation | Our Construction Company</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Add icons or stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Cost Estimation</h1>
+            <p>Get an instant estimate for your construction project. Simply enter the details below.</p>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="cost-estimation.html">Cost Estimation</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cost Estimation Form Section -->
+    <section class="cost-estimation">
+        <div class="container">
+            <h2>Estimate Your Construction Costs</h2>
+            <p>Fill in the details below, and we’ll provide an instant cost estimate for your construction project.</p>
+
+            <form id="estimationForm">
+                <div class="form-row">
+                    <label for="area">Enter Area (sq ft):</label>
+                    <input type="number" id="area" name="area" required placeholder="Enter the total area">
+                </div>
+
+                <div class="form-row">
+                    <label for="rate">Construction Rate per sq ft:</label>
+                    <input type="number" id="rate" name="rate" value="100" required placeholder="Enter the rate per square foot">
+                </div>
+
+                <button type="button" onclick="calculateCost()" class="btn-submit">Estimate Cost</button>
+            </form>
+
+            <div class="result">
+                <p id="result">Your estimated cost will appear here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Our Construction Company | All Rights Reserved</p>
+            <p>Follow us on:</p>
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- Script to calculate cost -->
+    <script>
+        function calculateCost() {
+            var area = document.getElementById("area").value;
+            var rate = document.getElementById("rate").value;
+            var result = area * rate;
+
+            if (area && rate) {
+                document.getElementById("result").innerText = "Estimated Cost: $" + result;
+            } else {
+                document.getElementById("result").innerText = "Please enter both area and rate.";
+            }
+        }
+    </script>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
